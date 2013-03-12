@@ -20,7 +20,7 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias g="git"
 alias sc="screen -UxDR"
 alias sed="gsed"
-alias awk="gawk"
+#alias awk="gawk"
 alias ls="ls -G"
 alias ll="ls -la"
 

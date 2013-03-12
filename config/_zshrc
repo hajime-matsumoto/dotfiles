@@ -109,32 +109,39 @@ autoload -Uz colors
 colors
 
 # PROMPTの表示設定 
-#PROMPT="%{${fg[green]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
-#PROMPT2="%{${fg[green]}%}%_> %{${reset_color}%}"
-SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
-RPROMPT="%{${fg[green]}%}%1v%2v [%~]%{${reset_color}%}"
+function git-branch {
+    BRANCH=$(git status 2>/dev/null | awk 'NR==1{print $4}');
+    if [ "$BRANCH" !=  "" ]
+    then
+      echo "*$BRANCH"
+    fi
+    return 0
+}
 
-PROMPT=$'%{$fg_bold[green]%}%n@%m %{$fg[blue]%}%D{[%I:%M:%S]} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%}\
-%{$fg[blue]%}->%{$fg_bold[blue]%} %#%{$reset_color%} '
+PROMPT="%{${fg[green]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
+PROMPT2="%{${fg[green]}%}%_> %{${reset_color}%}"
+SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
+#RPROMPT='%{${fg[green]}%}%1v%2v$(parse_git_branch):$(git-branch) [%~]%{${reset_color}%}'
+
+#PROMPT=$'%{$fg_bold[green]%}%n@%m %{$fg[blue]%}%D{[%I:%M:%S]} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%} %{$fg_bold[red]%}$(git-branch)%{$reset_color%}\
+#%{$fg[blue]%}->%{$fg_bold[blue]%} %#%{$reset_color%} '
+
+PROMPT=$'%{$fg_bold[blue]%}%D{[%I:%M:%S]} %{$fg_bold[green]%}%n@%m%{$fg_bold[white]%}:%3~%{$reset_color%}%{$fg_bold[red]%}$(git-branch)%{$reset_color%}%(!.#.$) '
 
 # NORMALモードかINSERTモードかでプロンプトの色を変える 
-function zle-line-init zle-keymap-select {
-  case $KEYMAP in
-    vicmd)
-        #PROMPT="%{${fg[red]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
-        PROMPT=$'%{$fg_bold[red]%}%n@%m %{$fg[blue]%}%D{[%I:%M:%S]} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%}\
-%{$fg[blue]%}->%{$fg_bold[blue]%} %#%{$reset_color%} '
-    ;;
-    main|viins)
-    #PROMPT="%{${fg[green]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
-        PROMPT=$'%{$fg_bold[green]%}%n@%m %{$fg[blue]%}%D{[%I:%M:%S]} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%}\
-%{$fg[blue]%}->%{$fg_bold[blue]%} %#%{$reset_color%} '
-    ;;
-  esac
-  zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+#function zle-line-init zle-keymap-select {
+#  case $KEYMAP in
+#    vicmd)
+#    PROMPT="%{${fg[red]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
+#    ;;
+#    main|viins)
+#    PROMPT="%{${fg[green]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
+#    ;;
+#  esac
+#  zle reset-prompt
+#}
+#zle -N zle-line-init
+#zle -N zle-keymap-select
 
 # gitのブランチ名と変更状況をプロンプトに表示する 
 autoload -Uz is-at-least
@@ -170,7 +177,7 @@ if is-at-least 4.3.10; then
     fi
     return 0
   }
-  add-zsh-hook precmd _update_vcs_info_msg
+  #add-zsh-hook precmd _update_vcs_info_msg
 fi
 
 ####### 補完機能 #######

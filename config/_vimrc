@@ -1,0 +1,17 @@
+"バンドルプラグインを読み込む
+source ~/dotfiles/config/_vimrc.d/NeoBundle.conf
+
+"NeoComplcacheの設定
+source ~/dotfiles/config/_vimrc.d/NeoComplcache.conf
+
+"Unitの設定
+source ~/dotfiles/config/_vimrc.d/Unit.conf
+
+"エンコーディング
+source ~/dotfiles/config/_vimrc.d/Encoding.conf
+
+"基本
+source ~/dotfiles/config/_vimrc.d/Basic.conf
+
+"インデントの設定
+source ~/dotfiles/config/_vimrc.d/Indent.conf

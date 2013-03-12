@@ -47,12 +47,12 @@ echo Install Setting! >&2
 
 cd ~/
 
-ln -s ~/dotfiles/_vimrc .vimrc
-ln -s ~/dotfiles/_gitconfig .gitconfig
-ln -s ~/dotfiles/_tmux.conf .tmux.conf
-ln -s ~/dotfiles/_zshrc .zshrc
-ln -s ~/dotfiles/_zsh_history .zsh_history
-ln -s ~/dotfiles/_ssh/authorized_keys .ssh/authorized_keys
+ln -s ~/dotfiles/config/_vimrc .vimrc
+ln -s ~/dotfiles/config/_gitconfig .gitconfig
+ln -s ~/dotfiles/config/_tmux.conf .tmux.conf
+ln -s ~/dotfiles/config/_zshrc .zshrc
+ln -s ~/dotfiles/config/_zsh_history .zsh_history
+ln -s ~/dotfiles/config/_ssh/authorized_keys .ssh/authorized_keys
 
 # NeoBundleInstall from commandline
 vim +NeoBundleInstall +qa

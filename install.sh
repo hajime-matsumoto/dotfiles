@@ -51,8 +51,7 @@ ln -s ~/dotfiles/_vimrc .vimrc
 ln -s ~/dotfiles/_gitconfig .gitconfig
 ln -s ~/dotfiles/_zshrc .zshrc
 ln -s ~/dotfiles/_zsh_history .zsh_history
-#ln -s ~/dotfiles/_zshrc .zshrc
-#ln -s ~/dotfiles/_zshenv .zshenv
+ln -s ~/dotfiles/_ssh/authorized_keys .ssh/authorized_keys
 
 # NeoBundleInstall from commandline
 vim +NeoBundleInstall +qa

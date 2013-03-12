@@ -23,7 +23,7 @@ fi
 
 # install tmux
 echo "Check If Tmux Installed"
-which tumx > /dev/null 2>&1
+which tmux > /dev/null 2>&1
 if [ $? -eq 0 ] ; then
     echo Success!
 else

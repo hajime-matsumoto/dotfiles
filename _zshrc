@@ -1,7 +1,9 @@
+# vim: filetype=sh :
 source ~/dotfiles/antigen/antigen.zsh
 
 antigen-lib
 # Bundles from the default repo
+antigen-bundle autojump
 antigen-bundle git
 antigen-bundle heroku
 antigen-bundle pip

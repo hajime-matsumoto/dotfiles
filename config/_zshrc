@@ -126,7 +126,8 @@ SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
 #PROMPT=$'%{$fg_bold[green]%}%n@%m %{$fg[blue]%}%D{[%I:%M:%S]} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%} %{$fg_bold[red]%}$(git-branch)%{$reset_color%}\
 #%{$fg[blue]%}->%{$fg_bold[blue]%} %#%{$reset_color%} '
 
-PROMPT=$'%{$fg_bold[blue]%}%D{[%I:%M:%S]} %{$fg_bold[green]%}%n@%m%{$fg_bold[white]%}:%3~%{$reset_color%}%{$fg_bold[red]%}$(git-branch)%{$reset_color%}%(!.#.$) '
+PROMPT=$'%{$fg_bold[blue]%}%D{[%I:%M:%S]} %{$fg_bold[green]%}%n@%m%{$fg_bold[white]%}:%3~%{$reset_color%}%{$fg_bold[red]%}$(git-branch)\
+%{$reset_color%}%(!.#.$) '
 
 # NORMALモードかINSERTモードかでプロンプトの色を変える 
 #function zle-line-init zle-keymap-select {

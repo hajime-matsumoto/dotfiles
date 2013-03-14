@@ -1,3 +1,22 @@
+####### keybinding ########
+
+# Vi base 
+bindkey -v
+
+bindkey '^P' up-line-or-history
+bindkey '^N' down-line-or-history
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^F' forward-char
+bindkey '^B' backward-char
+bindkey '^D' delete-char-or-list
+bindkey '^U' kill-whole-line
+bindkey '^K' kill-line
+bindkey '^R' history-incremental-search-backward
+bindkey '^W' backward-kill-word
+
+
+
 #==========================#
 # ディレクトリ移動
 #--------------------------#

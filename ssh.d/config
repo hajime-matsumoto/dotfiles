@@ -1,3 +1,5 @@
+# vim: set ft=sshconfig : #
+
 # エージェントフォワード機能を有効にする
 # ローカルのSSH秘密鍵を次のリモート先にも有効にする
 ForwardAgent yes
@@ -8,11 +10,20 @@ PubkeyAuthentication yes
 # 60秒に一回キープアライブパケットを送る
 ServerAliveInterval 60
 
+
+# 接続ホスト先の情報
+
+#--- HazimeORG シリーズ ---#
 Host gw
     HostName gw.hazime.org
-
 Host www
     HostName www.hazime.org
-
 Host phone
     HostName phone.hazime.org
+
+#--- GITHUB ---#
+Host github.com
+	User git
+	Port 22
+	Hostname github.com
+	IdentityFile ~/.ssh/kurari_rsa

@@ -23,7 +23,7 @@ Host phone
 
 #--- GITHUB ---#
 Host github.com
-	User git
-	Port 22
-	Hostname github.com
-	IdentityFile ~/.ssh/kurari_rsa
+    User git
+    Port 22
+    Hostname github.com
+    IdentityFile ~/.ssh/HajimeMATSUMOTO_2013_MAIN_rsa

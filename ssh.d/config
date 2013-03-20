@@ -11,8 +11,8 @@ PubkeyAuthentication yes
 ServerAliveInterval 60
 
 # 使用するキーファイル
-IdentityFile ~/.ssh/HajimeServers_rsa
-IdentityFile ~/.ssh/HajimeAWS_rsa
+IdentityFile ~/.ssh/HazimeServers_rsa
+IdentityFile ~/.ssh/HazimeAWS_rsa
 
 # 接続ホスト先の情報
 
@@ -22,10 +22,11 @@ Host gw
 Host www
     HostName www.hazime.org
 Host phone
+    HostName phone.hazime.org
 
 #--- GITHUB ---#
 Host github.com
     User git
     Port 22
     Hostname github.com
-    IdentityFile ~/.ssh/HajimeGithub_rsa
+    IdentityFile ~/.ssh/HazimeGithub_rsa

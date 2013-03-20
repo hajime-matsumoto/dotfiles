@@ -17,6 +17,11 @@ set viminfo='10000             " viminfoファイルの設定
 set wildmenu                   " コマンドラインでの補完候補が表示されるようになる
 filetype plugin indent on      " ファイル名と内容をもとにファイルタイププラグインを有効にする
 
+"------------------------------------
+" モードラインの設定
+"------------------------------------
+set modeline " モードラインを有効にする
+set modelines=5 "ファイル開始５行目までをモードラインとして検索する
 
 "------------------------------------
 " 検索
@@ -76,9 +81,10 @@ set listchars=tab:»-,trail:-,nbsp:%
 set display=uhex
 set t_Co=256
 set showmatch
+set ambiwidth=double " 全角記号対策
 " 全角スペースの表示
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
-match ZenkakuSpace /　/
+match ZenkakuSpace /＿/
 
 " カーソル行をハイライト
 set cursorline

@@ -53,6 +53,7 @@ ln -s ~/dotfiles/config/_tmux.conf .tmux.conf
 ln -s ~/dotfiles/zsh.d/_zshrc .zshrc
 ln -s ~/dotfiles/zsh.d/_zshenv .zshenv
 ln -s ~/dotfiles/ssh.d/config .ssh/config
+ln -s ~/dotfiles/ssh.d/authorized_keys .ssh/authorized_keys
 
 # NeoBundleInstall from commandline
 vim +NeoBundleInstall +qa

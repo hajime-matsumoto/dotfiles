@@ -10,6 +10,9 @@ PubkeyAuthentication yes
 # 60秒に一回キープアライブパケットを送る
 ServerAliveInterval 60
 
+# 使用するキーファイル
+IdentityFile ~/.ssh/HajimeServers_rsa
+IdentityFile ~/.ssh/HajimeAWS_rsa
 
 # 接続ホスト先の情報
 
@@ -19,11 +22,10 @@ Host gw
 Host www
     HostName www.hazime.org
 Host phone
-    HostName phone.hazime.org
 
 #--- GITHUB ---#
 Host github.com
     User git
     Port 22
     Hostname github.com
-    IdentityFile ~/.ssh/HajimeMATSUMOTO_2013_MAIN_rsa
+    IdentityFile ~/.ssh/HajimeGithub_rsa

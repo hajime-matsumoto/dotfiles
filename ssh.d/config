@@ -1,0 +1,18 @@
+# エージェントフォワード機能を有効にする
+# ローカルのSSH秘密鍵を次のリモート先にも有効にする
+ForwardAgent yes
+
+# 公開鍵を有効にする
+PubkeyAuthentication yes
+
+# 60秒に一回キープアライブパケットを送る
+ServerAliveInterval 60
+
+Host gw
+    HostName gw.hazime.org
+
+Host www
+    HostName www.hazime.org
+
+Host phone
+    HostName phone.hazime.org
